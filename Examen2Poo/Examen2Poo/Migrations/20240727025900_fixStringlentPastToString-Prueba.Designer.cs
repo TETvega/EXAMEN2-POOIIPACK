@@ -4,6 +4,7 @@ using Examen2Poo.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Examen2Poo.Migrations
 {
     [DbContext(typeof(Examen2PooContext))]
-    partial class Examen2PooContextModelSnapshot : ModelSnapshot
+    [Migration("20240727025900_fixStringlentPastToString-Prueba")]
+    partial class fixStringlentPastToStringPrueba
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -50,14 +53,6 @@ namespace Examen2Poo.Migrations
                         .HasColumnType("float")
                         .HasColumnName("cuota_con_seguro");
 
-                    b.Property<int>("DiasMes")
-                        .HasColumnType("int")
-                        .HasColumnName("dias_mes");
-
-                    b.Property<DateTime>("Fecha")
-                        .HasColumnType("datetime2")
-                        .HasColumnName("Fecha");
-
                     b.Property<double>("Interest")
                         .HasColumnType("float")
                         .HasColumnName("tasa_interes");
@@ -69,7 +64,7 @@ namespace Examen2Poo.Migrations
                     b.Property<string>("NombreClave")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)")
-                        .HasColumnName("clave_amortizacion");
+                        .HasColumnName("identidad_cliente");
 
                     b.Property<double>("SaldoPrincipal")
                         .HasColumnType("float")

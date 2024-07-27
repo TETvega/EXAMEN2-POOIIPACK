@@ -4,6 +4,8 @@ using Examen2Poo.API.Services;
 using Examen2Poo.API.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Examen2Poo.Database;
+using Examen2Poo.Services.Interfaces;
+using Examen2Poo.Services;
 
 namespace Examen2Poo.API
 {
@@ -28,6 +30,7 @@ namespace Examen2Poo.API
 
             // add custom services
             services.AddTransient<IAuthService,AuthService>();//Servicios de Json
+            services.AddTransient<IClientService, ClientService>();
 
             // add automapper
             services.AddAutoMapper(typeof(AutoMapperProfile));   

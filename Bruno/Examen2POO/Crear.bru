@@ -1,0 +1,28 @@
+meta {
+  name: Crear
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{PATH}}/clients
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name": "Hector",
+    "identytyNumber": "0401200401099",
+    "loadAmount": 136000,
+    "comisionRate": 0.19,
+    "interesRest": 0.4,
+    "ter": 15,
+    "dateTimeDesembolso": "2024-07-27T05:44:26.586Z",
+    "deteTimePrimerPago": "2024-07-27T05:44:26.586Z",
+    "amortitationsList": [
+      "BAC",
+      "Atla"
+    ]
+  }
+}

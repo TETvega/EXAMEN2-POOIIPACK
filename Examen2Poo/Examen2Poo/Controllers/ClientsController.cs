@@ -1,4 +1,5 @@
 ﻿using Examen2Poo.API.Dtos.common;
+using Examen2Poo.Dto.Amortitation;
 using Examen2Poo.Dto.Client;
 using Examen2Poo.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -7,7 +8,9 @@ namespace Examen2Poo.Controllers
 {
     [Route("api/clients")]
     [ApiController]
-    public class ClientsController :ControllerBase
+
+
+    public class ClientsController : ControllerBase
     {
         private readonly IClientService _clientService;
 
@@ -25,6 +28,17 @@ namespace Examen2Poo.Controllers
             {
                 response.Status,
                 response.Message
+            });
+        }
+        [HttpGet("loans/{id}")]
+        public async Task<ActionResult<ResponseDto<dtoprueba>>> GetByidSolution(Guid id)
+            {
+            var response = await _clientService.GetByIdSolutionsAsync(id);
+            return StatusCode(response.StatusCode, new
+            {
+                response.Status,
+                response.Message,
+                response.Data
             });
         }
 

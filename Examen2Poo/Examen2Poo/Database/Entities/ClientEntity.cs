@@ -17,7 +17,7 @@ namespace Examen2Poo.Database.Entities
         [Required(ErrorMessage = "La {0} es obligatoria.")]
         [StringLength(13, ErrorMessage = "La {0} debe tener al menos {2} caracteres de longitud.")]
         [Column("identidad")]
-        public int IdentytyNumber { get; set; }
+        public string IdentytyNumber { get; set; }
         [Display(Name = "Monto Desembolsado")]
         [Required(ErrorMessage = "La {0} es obligatoria.")]
         [Column("monto_desembolsado")]
@@ -42,7 +42,6 @@ namespace Examen2Poo.Database.Entities
         [Required(ErrorMessage = "La {0} es obligatoria. en meses")]
         [Column("Fecha del Primer Pago")]
         public DateTime DeteTimePrimerPago { get; set; }
-
         public virtual IEnumerable<ClientAmortitationEntity> Amortitations { get; set; }
 
     }

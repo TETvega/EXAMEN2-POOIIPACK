@@ -7,10 +7,18 @@ namespace Examen2Poo.Database.Entities
     [Table("amortitation", Schema = "dbo")]
     public class AmortizationEntity:BaseEntity
     {
-        [Display(Name = "identidad Cliente")]
+        [Display(Name = "clave_amortizacion")]
         [Required(ErrorMessage = "La {0} es obligatoria.")]
-        [Column("identidad_cliente")]
+        [Column("clave_amortizacion")]
         public string NombreClave {  get; set; }
+
+        [Display(Name ="Fecha pago")]
+        [Column ("Fecha")]
+        public DateTime Fecha { get; set; }
+
+        [Display(Name ="Dias")]
+        [Column("dias_mes")]
+        public int DiasMes {  get; set; }
 
         [Display(Name = "Numero de Cuota")]
         [Required(ErrorMessage = "La {0} es obligatoria.")]

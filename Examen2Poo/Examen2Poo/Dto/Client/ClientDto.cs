@@ -10,7 +10,7 @@ namespace Examen2Poo.Dto.Client
 
         public string Name { get; set; }
 
-        public int IdentytyNumber { get; set; }
+        public string IdentytyNumber { get; set; }
 
         public double LoadAmount { get; set; }
 

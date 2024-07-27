@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Examen2Poo.Dto.Client
 {
@@ -12,7 +13,7 @@ namespace Examen2Poo.Dto.Client
         [Display(Name = "Identidad")]
         [Required(ErrorMessage = "La {0} es obligatoria.")]
         [StringLength(13, ErrorMessage = "La {0} debe tener al menos {2} caracteres de longitud.")]
-        public int IdentytyNumber { get; set; }
+        public string IdentytyNumber { get; set; }
         [Display(Name = "Monto Desembolsado")]
         [Required(ErrorMessage = "La {0} es obligatoria.")]
         public double LoadAmount { get; set; }
@@ -31,7 +32,6 @@ namespace Examen2Poo.Dto.Client
         [Display(Name = "Fecha del Primer Pago")]
         [Required(ErrorMessage = "La {0} es obligatoria. en meses")]
         public DateTime DeteTimePrimerPago { get; set; }
-
         public List<string> AmortitationsList { get; set; }
     }
 }
